@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Configuration
-@Profile("h2")
+@Profile({"h2", "render"})
 public class DataInitializer {
 
     @Bean
