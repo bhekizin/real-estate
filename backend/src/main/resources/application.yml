@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: real-estate-api
+
+  # Active profile: use 'mysql' for MySQL, 'h2' for dev, 'render' for Render deployment
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:h2}
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  port: 8080
+
+# JWT Configuration
+app:
+  jwt:
+    secret: RealEstateSecretKeyForJWTTokenGeneration2024VeryLongSecretKey123456789
+    expiration-ms: 86400000  # 24 hours
+
+# File upload configuration
+file:
+  upload-dir: ./uploads/properties

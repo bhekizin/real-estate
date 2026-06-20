@@ -1,0 +1,28 @@
+# Render Blueprint - Deploy both backend and frontend
+# See: https://render.com/docs/blueprint-spec
+
+services:
+  # Backend - Spring Boot Web Service
+  - type: web
+    name: realestate-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    branch: main
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: render
+      - key: PORT
+        value: "8080"
+
+  # Frontend - Static Site
+  - type: web
+    name: realestate-frontend
+    runtime: static
+    buildCommand: echo "No build needed"
+    staticPublishPath: ./frontend
+    branch: main
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache

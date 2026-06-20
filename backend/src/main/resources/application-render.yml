@@ -1,0 +1,28 @@
+# Render deployment profile
+# Uses H2 in-memory database (free tier - no external DB needed)
+# To use MySQL, provision a Render MySQL add-on and update datasource URL
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:real_estate_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+  flyway:
+    enabled: false
+
+  h2:
+    console:
+      enabled: false
+
+server:
+  port: ${PORT:8080}

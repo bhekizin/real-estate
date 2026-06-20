@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RealEstate - Find Your Dream Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                RealEstate
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="pages/properties.html" class="nav-link">Properties</a>
+                <a href="pages/compare.html" class="nav-link compare-link">
+                    Compare
+                    <span class="compare-badge" id="compare-count" style="display:none">0</span>
+                </a>
+            </div>
+            <div class="nav-right" id="nav-auth"></div>
+            <button class="mobile-menu-btn" onclick="document.getElementById('nav-links').classList.toggle('open')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Find Your Perfect Home</h1>
+            <p>Discover thousands of properties for sale and rent in the best locations across the country.</p>
+            <div class="search-box">
+                <form class="search-form" id="hero-search-form">
+                    <div class="form-group">
+                        <label>Keyword</label>
+                        <input type="text" class="form-control" id="hero-keyword" placeholder="Search properties...">
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <select class="form-control" id="hero-city">
+                            <option value="">All Cities</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Property Type</label>
+                        <select class="form-control" id="hero-type">
+                            <option value="">All Types</option>
+                            <option value="HOUSE">House</option>
+                            <option value="APARTMENT">Apartment</option>
+                            <option value="CONDO">Condo</option>
+                            <option value="TOWNHOUSE">Townhouse</option>
+                            <option value="LAND">Land</option>
+                            <option value="COMMERCIAL">Commercial</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Search</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Properties</h2>
+            <p class="section-subtitle">Hand-picked properties by our expert team</p>
+            <div class="property-grid" id="featured-properties">
+                <div class="loading"><div class="spinner"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <h2 class="section-title">Why Choose RealEstate</h2>
+            <p class="section-subtitle">We make finding your dream home simple and stress-free</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3>Wide Coverage</h3>
+                    <p>Properties in hundreds of cities. Find homes wherever life takes you.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Trusted Agents</h3>
+                    <p>Work with verified, professional agents who have your best interests at heart.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Easy Search</h3>
+                    <p>Advanced filters and search tools to find exactly what you're looking for.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                    </div>
+                    <h3>Best Value</h3>
+                    <p>Competitive prices and mortgage calculator to help you plan your budget.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">RealEstate</div>
+                    <p class="footer-desc">Your trusted partner in finding the perfect property. We connect buyers and sellers with the best opportunities in real estate.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/properties.html">Properties</a></li>
+                        <li><a href="pages/compare.html">Compare</a></li>
+                        <li><a href="pages/login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Property Types</h4>
+                    <ul>
+                        <li><a href="pages/properties.html?type=HOUSE">Houses</a></li>
+                        <li><a href="pages/properties.html?type=APARTMENT">Apartments</a></li>
+                        <li><a href="pages/properties.html?type=CONDO">Condos</a></li>
+                        <li><a href="pages/properties.html?type=COMMERCIAL">Commercial</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>42 Rivonia Road, Sandton</li>
+                        <li>Johannesburg, Gauteng 2196</li>
+                        <li>info@realestate.co.za</li>
+                        <li>+27 11 234 5678</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 RealEstate. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Load cities
+            try {
+                const cities = await apiGet('/properties/cities');
+                const citySelect = document.getElementById('hero-city');
+                cities.forEach(city => {
+                    const opt = document.createElement('option');
+                    opt.value = city;
+                    opt.textContent = city;
+                    citySelect.appendChild(opt);
+                });
+            } catch (e) { console.log('Could not load cities'); }
+
+            // Load featured properties
+            try {
+                const data = await apiGet('/properties/featured', { page: 0, size: 6 });
+                const grid = document.getElementById('featured-properties');
+                const properties = data.content || data;
+                if (properties.length === 0) {
+                    grid.innerHTML = '<div class="empty-state"><p>No featured properties available yet.</p></div>';
+                } else {
+                    grid.innerHTML = properties.map(p => createPropertyCard(p)).join('');
+                }
+            } catch (e) {
+                document.getElementById('featured-properties').innerHTML = '<div class="empty-state"><p>Unable to load properties. Please try again later.</p></div>';
+            }
+
+            // Search form
+            document.getElementById('hero-search-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const keyword = document.getElementById('hero-keyword').value;
+                const city = document.getElementById('hero-city').value;
+                const type = document.getElementById('hero-type').value;
+                const params = new URLSearchParams();
+                if (keyword) params.set('keyword', keyword);
+                if (city) params.set('city', city);
+                if (type) params.set('type', type);
+                window.location.href = 'pages/properties.html?' + params.toString();
+            });
+        });
+    </script>
+</body>
+</html>
