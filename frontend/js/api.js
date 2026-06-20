@@ -1,9 +1,9 @@
 // API Base URL - automatically detects deployment environment
 // For local development: http://localhost:8080/api
-// For Render deployment: update this to your Render backend URL
+// For Render deployment: uses the deployed backend URL
 const API_BASE = window.location.hostname === 'localhost'
     ? 'http://localhost:8080/api'
-    : 'https://realestate-api.onrender.com/api';  // <-- Replace with your actual Render backend URL
+    : 'https://realestate-api-teqp.onrender.com/api';
 
 function getToken() {
     return localStorage.getItem('token');
